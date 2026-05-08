@@ -8,11 +8,18 @@
   </head>
   <body>
     <multi-select>
-      <multi-select-option key="red">Red</multi-select-option>
-      <multi-select-option key="blue">Blue</multi-select-option>
-      <multi-select-option key="green">Green</multi-select-option>
+      <multi-select-option value="red">Red</multi-select-option>
+      <multi-select-option value="blue">Blue</multi-select-option>
+      <multi-select-option value="green">Green</multi-select-option>
     </multi-select>
-    <script src="multi-select.js"></script>
+    <script>
+      // Log selected values on change
+      const multiSelect = document.querySelector('multi-select');
+      multiSelect.addEventListener('change', (e) => {
+        console.log('Selected options:', multiSelect.selectedValues);
+      });
+    </script>
     <script src="multi-select-option.js"></script>
+    <script src="multi-select.js"></script>
   </body>
 </html>
